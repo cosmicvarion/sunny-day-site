@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sunny-day.app/sitemap.xml

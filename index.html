@@ -44,22 +44,39 @@
 
     <main id="top">
       <section class="hero container">
-        <div class="hero-copy">
-          <p class="eyebrow">Sunny Day for iOS</p>
-          <h1>Build healthy, sustainable sunlight habits.</h1>
-          <p class="body">
-            Track your daily light exposure with Apple Health Time in Daylight
-            data, check live UV and sun timing, and build better routines over
-            time.
-          </p>
-          <div class="cta-row">
-            <a class="cta" href="#features">See how it works</a>
-            <a class="cta cta-primary" href="#benefits">Why Sunny Day</a>
+        <div class="hero-top">
+          <div class="hero-copy">
+            <p class="eyebrow">Sunny Day for iOS</p>
+            <h1>Build healthy, sustainable sunlight habits.</h1>
+            <p class="body">
+              Track your daily light exposure with Apple Health Time in Daylight
+              data, check live UV and sun timing, and build better routines over
+              time.
+            </p>
+            <div class="cta-row">
+              <a class="cta" href="#features">See how it works</a>
+              <a class="cta cta-primary" href="#benefits">Why Sunny Day</a>
+            </div>
           </div>
-        </div>
-        <div class="hero-art" aria-label="Sunny Day app preview">
-          <div class="device-mockup">
-            <img src="./assets/screenshots/01_today.png" alt="Sunny Day Today view screenshot" />
+          <div class="hero-art" aria-label="Sunny Day app preview">
+            <div class="device-mockup">
+              <img
+                src="./assets/screenshots/light/01_today.png"
+                data-screenshot-light="./assets/screenshots/light/01_today.png"
+                data-screenshot-dark="./assets/screenshots/dark/01_today.png"
+                alt="Sunny Day Today view screenshot"
+                width="540"
+                height="1168"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <div class="hero-theme-wrap" id="theme-toggle-wrap">
+              <div class="theme-toggle" role="radiogroup" aria-label="Color scheme">
+                <button type="button" data-theme-choice="light" role="radio" aria-checked="true">Light</button>
+                <button type="button" data-theme-choice="dark" role="radio" aria-checked="false">Dark</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -151,19 +168,55 @@
         <h2>App preview</h2>
         <div class="grid four">
           <article class="shot">
-            <img src="./assets/screenshots/01_today.png" alt="Sunny Day Today view screenshot" />
+            <img
+              src="./assets/screenshots/light/01_today.png"
+              data-screenshot-light="./assets/screenshots/light/01_today.png"
+              data-screenshot-dark="./assets/screenshots/dark/01_today.png"
+              alt="Sunny Day Today view screenshot"
+              width="540"
+              height="1168"
+              loading="lazy"
+              decoding="async"
+            />
             <p>Today</p>
           </article>
           <article class="shot">
-            <img src="./assets/screenshots/02_daylight.png" alt="Sunny Day Daylight view screenshot" />
+            <img
+              src="./assets/screenshots/light/02_daylight.png"
+              data-screenshot-light="./assets/screenshots/light/02_daylight.png"
+              data-screenshot-dark="./assets/screenshots/dark/02_daylight.png"
+              alt="Sunny Day Daylight view screenshot"
+              width="540"
+              height="1168"
+              loading="lazy"
+              decoding="async"
+            />
             <p>Daylight</p>
           </article>
           <article class="shot">
-            <img src="./assets/screenshots/03_record.png" alt="Sunny Day Record view screenshot" />
+            <img
+              src="./assets/screenshots/light/03_record.png"
+              data-screenshot-light="./assets/screenshots/light/03_record.png"
+              data-screenshot-dark="./assets/screenshots/dark/03_record.png"
+              alt="Sunny Day Record view screenshot"
+              width="540"
+              height="1168"
+              loading="lazy"
+              decoding="async"
+            />
             <p>Record</p>
           </article>
           <article class="shot">
-            <img src="./assets/screenshots/04_discover.png" alt="Sunny Day Discover view screenshot" />
+            <img
+              src="./assets/screenshots/light/04_discover.png"
+              data-screenshot-light="./assets/screenshots/light/04_discover.png"
+              data-screenshot-dark="./assets/screenshots/dark/04_discover.png"
+              alt="Sunny Day Discover view screenshot"
+              width="540"
+              height="1168"
+              loading="lazy"
+              decoding="async"
+            />
             <p>Discover</p>
           </article>
         </div>
@@ -222,5 +275,6 @@
     <footer class="site-footer container">
       <p>&copy; 2026 Keith Carolus. All rights reserved. <a href="./privacy.html">Privacy Policy</a></p>
     </footer>
+    <script src="./theme.js" defer></script>
   </body>
 </html>

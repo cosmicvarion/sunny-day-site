@@ -51,7 +51,10 @@ body {
 
 nav {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem 1.35rem;
 }
 
 nav a {
@@ -63,6 +66,13 @@ nav a {
 
 nav a:hover {
   color: var(--text-primary);
+}
+
+nav a[aria-current="page"] {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 1px;
 }
 
 .hero {
@@ -79,6 +89,53 @@ nav a:hover {
   border-radius: 20px;
   padding: clamp(24px, 4vw, 40px);
   box-shadow: 0 18px 36px rgba(41, 33, 46, 0.16);
+}
+
+/* Full-width sunny card (same treatment as hero copy) for Premium */
+.section-premium {
+  padding-top: 28px;
+  padding-bottom: 40px;
+}
+
+.premium-sunny {
+  width: 100%;
+}
+
+.premium-sunny-title {
+  margin: 0 0 22px;
+  font-size: clamp(1.5rem, 3.5vw, 2.15rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.premium-sunny-grid {
+  gap: 16px;
+}
+
+/* Frosted white on sunny gradient — same vibe as hero (dark type + light surfaces) */
+.premium-sunny .card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  box-shadow:
+    0 10px 32px rgba(41, 33, 46, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.premium-sunny .card h3 {
+  color: #1a1520;
+}
+
+.premium-sunny .card p {
+  color: #2f2536;
+}
+
+.premium-sunny .card-icon {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(41, 33, 46, 0.1);
+  color: #2f2536;
 }
 
 .hero-art {
@@ -199,6 +256,25 @@ h1 {
   padding: 16px;
 }
 
+/* Decorative icons on marketing cards (How it works → Premium) */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  color: var(--brand-primary);
+  background: color-mix(in srgb, var(--brand-primary) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand-primary) 28%, transparent);
+}
+
+.card-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
 .card h3 {
   margin: 0 0 8px;
 }
@@ -272,6 +348,65 @@ details p {
   color: var(--text-secondary);
 }
 
+/* Legal / privacy prose */
+.legal-hero > h1 {
+  margin-bottom: 1.25rem;
+}
+
+.legal-hero {
+  padding-top: clamp(24px, 5vw, 48px);
+  padding-bottom: 32px;
+}
+
+.card.legal-card {
+  padding: clamp(1.35rem, 4vw, 2.5rem);
+}
+
+.card.legal-card > h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.card.legal-card > h3:first-child {
+  margin-top: 0;
+}
+
+.card.legal-card > p {
+  margin: 0;
+}
+
+.card.legal-card > p + p,
+.card.legal-card > p + h3 {
+  margin-top: 1rem;
+}
+
+.card.legal-card a {
+  color: #5b8fd4;
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card.legal-card a {
+    color: #7ec8e8;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 12px;
+    min-height: unset;
+  }
+
+  nav {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
 @media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
@@ -331,5 +466,35 @@ details p {
   .device-mockup {
     background: #090a0c;
     border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .card-icon {
+    background: color-mix(in srgb, var(--brand-primary) 22%, transparent);
+    border-color: color-mix(in srgb, var(--brand-primary) 38%, transparent);
+  }
+
+  /* Same light-glass panels on the sunny gradient (not gray chips) */
+  .premium-sunny .card {
+    background: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px) saturate(1.1);
+    -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .premium-sunny .card h3 {
+    color: #141018;
+  }
+
+  .premium-sunny .card p {
+    color: #2f2536;
+  }
+
+  .premium-sunny .card-icon {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(41, 33, 46, 0.12);
+    color: #1a1520;
   }
 }

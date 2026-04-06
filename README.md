@@ -1,6 +1,6 @@
-# Sunny Day Site
+# SunnyDay Site
 
-Marketing website for Sunny Day.
+Marketing website for SunnyDay.
 
 ## License
 
